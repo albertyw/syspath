@@ -8,7 +8,10 @@ def append_path(path):
 
 
 def caller_path(index):
-    """ Get the caller's file path, by the index of the stack """
+    """
+    Get the caller's file path, by the index of the stack,
+    does not work when the caller is stdin through a CLI python
+    """
     module = None
     stack = inspect.stack()
     while not module:
@@ -23,6 +26,12 @@ def caller_path(index):
 
 
 def append_current_path(index=2):
-    """ Append the caller's path to sys.path """
-    path = caller_path(index)
+    """
+    Append the caller's path to sys.path
+    If the caller is a CLI through stdin, the current working directory is used
+    """
+    try:
+        path = caller_path(index)
+    except RuntimeError:
+        path = os.getcwd()
     append_path(path)
