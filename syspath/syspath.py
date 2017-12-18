@@ -10,8 +10,11 @@ def append_path(path):
 def caller_path(index):
     """ Get the caller's file path, by the index of the stack """
     module = None
+    stack = inspect.stack()
     while not module:
-        frame = inspect.stack()[index]
+        if index >= len(stack):
+            raise RuntimeError("Cannot find import path")
+        frame = stack[index]
         module = inspect.getmodule(frame[0])
         index += 1
     filename = module.__file__
