@@ -1,1 +1,1 @@
-from .syspath import *
+from .syspath import *  # noqa: disable=F403
