@@ -32,29 +32,29 @@ class TestSysPath(unittest.TestCase):
             syspath.caller_path(100)
 
     def test_append_current_path(self):
-        syspath.append_current_path()
+        appended_path = syspath.append_current_path()
         self.assertEqual(len(sys.path), len(self.orig_sys_path)+1)
-        appended_path = sys.path[-1]
+        self.assertEqual(appended_path, sys.path[-1])
         self.assertEqual(os.path.split(appended_path)[1], 'tests')
 
     def test_append_cli_path(self):
         with patch('syspath.syspath.caller_path') as mock_caller_path:
             mock_caller_path.side_effect = RuntimeError()
-            syspath.append_current_path()
-        appended_path = sys.path[-1]
+            appended_path = syspath.append_current_path()
+        self.assertEqual(appended_path, sys.path[-1])
         self.assertEqual(appended_path, os.getcwd())
 
     def test_append_git_root(self):
-        syspath.append_git_root()
+        appended_path = syspath.append_git_root()
         self.assertEqual(len(sys.path), len(self.orig_sys_path)+1)
-        appended_path = sys.path[-1]
+        self.assertEqual(appended_path, sys.path[-1])
         self.assertEqual(os.path.split(appended_path)[1], 'syspath')
 
     def test_append_git_root_cli(self):
         with patch('syspath.syspath.caller_path') as mock_caller_path:
             mock_caller_path.side_effect = RuntimeError()
-            syspath.append_git_root()
-        appended_path = sys.path[-1]
+            appended_path = syspath.append_git_root()
+        self.assertEqual(appended_path, sys.path[-1])
         self.assertEqual(os.path.split(appended_path)[1], 'syspath')
 
     def test_append_git_root_error(self):
