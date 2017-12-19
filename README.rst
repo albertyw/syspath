@@ -22,7 +22,7 @@ Publishing
     python setup.py sdist bdist_wheel
     twine upload dist/*
 
-.. |Codeship Status for albertyw/syspath| image:: https://codeship.com/projects/8d31dab0-c698-0135-edff-328cb0679be8
+.. |Codeship Status for albertyw/syspath| image:: https://app.codeship.com/projects/8d31dab0-c698-0135-edff-328cb0679be8/status?branch=master
    :target: https://codeship.com/projects/261214
 .. |Dependency Status| image:: https://gemnasium.com/badges/github.com/albertyw/syspath.svg
    :target: https://gemnasium.com/github.com/albertyw/syspath
