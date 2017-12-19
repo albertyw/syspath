@@ -4,7 +4,7 @@ import sys
 import unittest
 
 
-class TestSysPath(unittest.TestCase):
+class TestCurrentPath(unittest.TestCase):
     def setUp(self):
         self.orig_sys_path = copy.deepcopy(sys.path)
 

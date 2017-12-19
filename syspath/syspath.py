@@ -4,6 +4,7 @@ import sys
 
 
 def append_path(path):
+    """ Given a path string, append it to sys.path """
     sys.path.append(path)
 
 
@@ -25,7 +26,7 @@ def caller_path(index):
     return path
 
 
-def append_current_path(index=2):
+def get_current_path(index=2):
     """
     Append the caller's path to sys.path
     If the caller is a CLI through stdin, the current working directory is used
@@ -34,4 +35,14 @@ def append_current_path(index=2):
         path = caller_path(index)
     except RuntimeError:
         path = os.getcwd()
+    return path
+
+
+def append_current_path(index=3):
+    """
+    Append the result of current_path to sys.path
+    If the caller is a CLI through stdin, the current working directory is used
+    """
+    path = get_current_path(index=index)
     append_path(path)
+    return path
