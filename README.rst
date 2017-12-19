@@ -1,6 +1,8 @@
 SysPath
 =======
 
+|PyPI| |Python Versions|
+
 |Codeship Status for albertyw/syspath| |Dependency Status| |Code Climate| |Test Coverage|
 
 SysPath is a package to easily set common paths into ``sys.path``.  Instead of
@@ -45,6 +47,10 @@ Publishing
     python setup.py sdist bdist_wheel
     twine upload dist/*
 
+.. |PyPI| image:: https://img.shields.io/pypi/v/syspath.svg
+   :target: https://pypi.python.org/pypi/syspath/
+.. |Python Versions| image:: https://img.shields.io/pypi/pyversions/syspath.svg
+   :target: https://github.com/albertyw/syspath
 .. |Codeship Status for albertyw/syspath| image:: https://app.codeship.com/projects/8d31dab0-c698-0135-edff-328cb0679be8/status?branch=master
    :target: https://codeship.com/projects/261214
 .. |Dependency Status| image:: https://gemnasium.com/badges/github.com/albertyw/syspath.svg
