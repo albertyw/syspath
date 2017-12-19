@@ -1,0 +1,11 @@
+[run]
+source=.
+omit =
+  .virtualenv
+  setup.py
+  syspath/tests/*
+
+[report]
+exclude_lines =
+  pragma: no cover
+  if __name__ == "__main__":
