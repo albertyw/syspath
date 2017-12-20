@@ -50,7 +50,7 @@ setup(
 
     keywords='',
 
-    packages=find_packages("syspath", exclude=["tests"]),
+    packages=find_packages(exclude=["tests"]),
 
     install_requires=[],
 
