@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v0.1.0
+------
+
+ - Add ability to add git root to current path
+ - Restructure code so that paths can be read but not necessarily added to sys.path
+ - Return added paths
+
+
 v0.0.1
 ------
 
