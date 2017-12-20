@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v0.1.1
+------
+
+ - Add optional index to git_root functions so thtat it finds the caling function correctly
+ - Fix setup.py packaging so that syspath can be imported correctly
+
+
 v0.1.0
 ------
 
