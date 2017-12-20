@@ -48,12 +48,12 @@ def append_current_path(index=3):
     return path
 
 
-def get_git_root():
+def get_git_root(index=3):
     """
     Get the path of the git root directory of the caller's file
     Raises a RuntimeError if a git repository cannot be found
     """
-    path = get_current_path(index=3)
+    path = get_current_path(index=index)
     while True:
         git_path = os.path.join(path, '.git')
         if os.path.isdir(git_path):
@@ -63,11 +63,11 @@ def get_git_root():
         path = os.path.split(path)[0]
 
 
-def append_git_root():
+def append_git_root(index=4):
     """
     Append the result of get_git_root to sys.path
     Raises a RuntimeError if a git repository cannot be found
     """
-    path = get_git_root()
+    path = get_git_root(index=index)
     append_path(path)
     return path
