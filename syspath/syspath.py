@@ -28,7 +28,7 @@ def caller_path(index):
 
 def get_current_path(index=2):
     """
-    Append the caller's path to sys.path
+    Get the caller's path to sys.path
     If the caller is a CLI through stdin, the current working directory is used
     """
     try:
@@ -44,5 +44,30 @@ def append_current_path(index=3):
     If the caller is a CLI through stdin, the current working directory is used
     """
     path = get_current_path(index=index)
+    append_path(path)
+    return path
+
+
+def get_git_root():
+    """
+    Get the path of the git root directory of the caller's file
+    Raises a RuntimeError if a git repository cannot be found
+    """
+    path = get_current_path(index=3)
+    while True:
+        git_path = os.path.join(path, '.git')
+        if os.path.isdir(git_path):
+            return path
+        if os.path.dirname(path) == path:
+            raise RuntimeError("Cannot find git root")
+        path = os.path.split(path)[0]
+
+
+def append_git_root():
+    """
+    Append the result of get_git_root to sys.path
+    Raises a RuntimeError if a git repository cannot be found
+    """
+    path = get_git_root()
     append_path(path)
     return path
