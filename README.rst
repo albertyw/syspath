@@ -43,6 +43,7 @@ Development
 .. code:: bash
 
     pip install -r requirements-test.txt
+    mypy syspath/syspath.py
     coverage run setup.py test
     coverage report
     flake8

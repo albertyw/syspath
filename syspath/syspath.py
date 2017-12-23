@@ -3,12 +3,12 @@ import os
 import sys
 
 
-def append_path(path):
+def append_path(path):  # type: (str) -> None
     """ Given a path string, append it to sys.path """
     sys.path.append(path)
 
 
-def caller_path(index):
+def caller_path(index):  # type: (int) -> str
     """
     Get the caller's file path, by the index of the stack,
     does not work when the caller is stdin through a CLI python
@@ -26,7 +26,7 @@ def caller_path(index):
     return path
 
 
-def get_current_path(index=2):
+def get_current_path(index=2):  # type: (int) -> str
     """
     Get the caller's path to sys.path
     If the caller is a CLI through stdin, the current working directory is used
@@ -38,7 +38,7 @@ def get_current_path(index=2):
     return path
 
 
-def append_current_path(index=3):
+def append_current_path(index=3):  # type: (int) -> str
     """
     Append the result of current_path to sys.path
     If the caller is a CLI through stdin, the current working directory is used
@@ -48,7 +48,7 @@ def append_current_path(index=3):
     return path
 
 
-def get_git_root(index=3):
+def get_git_root(index=3):  # type: (int) -> str
     """
     Get the path of the git root directory of the caller's file
     Raises a RuntimeError if a git repository cannot be found
@@ -63,7 +63,7 @@ def get_git_root(index=3):
         path = os.path.split(path)[0]
 
 
-def append_git_root(index=4):
+def append_git_root(index=4):  # type: (int) -> str
     """
     Append the result of get_git_root to sys.path
     Raises a RuntimeError if a git repository cannot be found
