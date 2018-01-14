@@ -8,7 +8,7 @@ def append_path(path):  # type: (str) -> None
     sys.path.append(path)
 
 
-def caller_path(index):  # type: (int) -> str
+def _caller_path(index):  # type: (int) -> str
     """
     Get the caller's file path, by the index of the stack,
     does not work when the caller is stdin through a CLI python
@@ -32,7 +32,7 @@ def get_current_path(index=2):  # type: (int) -> str
     If the caller is a CLI through stdin, the current working directory is used
     """
     try:
-        path = caller_path(index)
+        path = _caller_path(index)
     except RuntimeError:
         path = os.getcwd()
     return path
