@@ -28,6 +28,15 @@ To append the current file's directory to ``sys.path``:
     # or
     from syspath import current_path
 
+To append the current file's parent directory to ``sys.path``:
+
+.. code:: python
+
+    import syspath
+    syspath.append_parent_path()
+    # or
+    from syspath import parent_path
+
 To append the current file's git repository root to ``sys.path``:
 
 .. code:: python
