@@ -1,6 +1,15 @@
 Changelog
 =========
 
+v1.0.0
+------
+
+ - Add importing parent paths
+ - Make append_path and caller_path functions private
+ - Add mypy annotations
+ - Update readme
+
+
 v0.1.1
 ------
 
