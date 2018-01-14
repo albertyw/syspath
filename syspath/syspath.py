@@ -3,7 +3,7 @@ import os
 import sys
 
 
-def append_path(path):  # type: (str) -> None
+def _append_path(path):  # type: (str) -> None
     """ Given a path string, append it to sys.path """
     sys.path.append(path)
 
@@ -44,7 +44,7 @@ def append_current_path(index=3):  # type: (int) -> str
     If the caller is a CLI through stdin, the current working directory is used
     """
     path = get_current_path(index=index)
-    append_path(path)
+    _append_path(path)
     return path
 
 
@@ -69,5 +69,5 @@ def append_git_root(index=4):  # type: (int) -> str
     Raises a RuntimeError if a git repository cannot be found
     """
     path = get_git_root(index=index)
-    append_path(path)
+    _append_path(path)
     return path

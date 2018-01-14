@@ -19,7 +19,7 @@ class TestSysPath(unittest.TestCase):
         sys.path = self.orig_sys_path
 
     def test_append_path(self):
-        syspath.append_path('asdf')
+        syspath._append_path('asdf')
         self.assertEqual(sys.path[-1], 'asdf')
 
     def test_caller_path(self):
