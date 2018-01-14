@@ -71,3 +71,28 @@ def append_git_root(index=4):  # type: (int) -> str
     path = get_git_root(index=index)
     _append_path(path)
     return path
+
+
+def get_parent_path(index=2):  # type: (int) -> str
+    """
+    Get the caller's parent path to sys.path
+    If the caller is a CLI through stdin, the parent of the current working
+    directory is used
+    """
+    try:
+        path = _caller_path(index)
+    except RuntimeError:
+        path = os.getcwd()
+    path = os.path.abspath(os.path.join(path, os.pardir))
+    return path
+
+
+def append_parent_path(index=3):  # type: (int) -> str
+    """
+    Append the result of parent_path to sys.path
+    If the caller is a CLI through stdin, the parent of the current working
+    directory is used
+    """
+    path = get_parent_path(index=index)
+    _append_path(path)
+    return path
