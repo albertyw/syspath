@@ -49,6 +49,8 @@ To append the current file's git repository root to ``sys.path``:
 Development
 -----------
 
+Syspath should work with both python 2 and 3.
+
 .. code:: bash
 
     pip install -r requirements-test.txt
