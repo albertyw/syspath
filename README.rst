@@ -54,6 +54,7 @@ Syspath should work with both python 2 and 3.
 .. code:: bash
 
     pip install -r requirements-test.txt
+    pip install -r requirements-test-python3.txt
     mypy syspath/syspath.py
     coverage run setup.py test
     coverage report
