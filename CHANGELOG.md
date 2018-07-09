@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v1.0.1
+------
+
+ - Switch from gemnasium to pyup
+ - Dependency updates
+ - README updates
+
+
 v1.0.0
 ------
 
