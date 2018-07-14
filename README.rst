@@ -46,6 +46,9 @@ To append the current file's git repository root to ``sys.path``:
     # or
     from syspath import git_root
 
+Each of the shortcut modules also provide a ``path`` variable that can be used
+to get the path added.
+
 Development
 -----------
 

@@ -2,6 +2,8 @@ import copy
 import sys
 import unittest
 
+import syspath
+
 
 class TestCurrentPath(unittest.TestCase):
     def setUp(self):
@@ -15,3 +17,7 @@ class TestCurrentPath(unittest.TestCase):
         from syspath import current_path  # noqa: F401
         import syspath
         self.assertIn(syspath.get_current_path(), sys.path)
+
+    def test_path(self):
+        from syspath import current_path
+        self.assertEqual(current_path.path, syspath.get_current_path())
