@@ -2,6 +2,8 @@ import copy
 import sys
 import unittest
 
+import syspath
+
 
 class TestParentPath(unittest.TestCase):
     def setUp(self):
@@ -15,3 +17,7 @@ class TestParentPath(unittest.TestCase):
         from syspath import parent_path  # noqa: F401
         import syspath
         self.assertIn(syspath.get_parent_path(), sys.path)
+
+    def test_path(self):
+        from syspath import parent_path
+        self.assertEqual(parent_path.path, syspath.get_parent_path())

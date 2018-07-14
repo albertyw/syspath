@@ -2,6 +2,8 @@ import copy
 import sys
 import unittest
 
+import syspath
+
 
 class TestGitRoot(unittest.TestCase):
     def setUp(self):
@@ -15,3 +17,7 @@ class TestGitRoot(unittest.TestCase):
         from syspath import git_root  # noqa: F401
         import syspath
         self.assertIn(syspath.get_git_root(), sys.path)
+
+    def test_path(self):
+        from syspath import git_root
+        self.assertEqual(git_root.path, syspath.get_git_root())
