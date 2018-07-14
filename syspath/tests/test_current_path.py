@@ -14,6 +14,5 @@ class TestCurrentPath(unittest.TestCase):
     def test_import(self):
         self.assertEqual(len(sys.path), len(self.orig_sys_path))
         from syspath import current_path  # noqa: F401
-        self.assertEqual(len(sys.path), len(self.orig_sys_path)+1)
-        appended_path = sys.path[-1]
-        self.assertEqual(os.path.split(appended_path)[1], 'tests')
+        import syspath
+        self.assertIn(syspath.get_current_path(), sys.path)

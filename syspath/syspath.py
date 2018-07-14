@@ -3,9 +3,13 @@ import os
 import sys
 
 
-def _append_path(path):  # type: (str) -> None
+def _append_path(new_path):  # type: (str) -> None
     """ Given a path string, append it to sys.path """
-    sys.path.append(path)
+    for path in sys.path:
+        path = os.path.abspath(path)
+        if new_path == path:
+            return
+    sys.path.append(new_path)
 
 
 def _caller_path(index):  # type: (int) -> str

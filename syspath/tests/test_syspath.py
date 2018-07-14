@@ -22,6 +22,10 @@ class TestSysPath(unittest.TestCase):
         syspath._append_path('asdf')
         self.assertEqual(sys.path[-1], 'asdf')
 
+    def test_append_path_deduplicates(self):
+        syspath._append_path(sys.path[0])
+        self.assertEqual(len(sys.path), len(self.orig_sys_path))
+
     def test_caller_path(self):
         path = syspath._caller_path(1)
         expected = os.path.dirname(os.path.realpath(__file__))
@@ -34,27 +38,26 @@ class TestSysPath(unittest.TestCase):
     def test_append_current_path(self):
         appended_path = syspath.append_current_path()
         self.assertEqual(len(sys.path), len(self.orig_sys_path)+1)
-        self.assertEqual(appended_path, sys.path[-1])
+        self.assertIn(appended_path, sys.path)
         self.assertEqual(os.path.split(appended_path)[1], 'tests')
 
     def test_append_cli_path(self):
         with patch('syspath.syspath._caller_path') as mock_caller_path:
             mock_caller_path.side_effect = RuntimeError()
             appended_path = syspath.append_current_path()
-        self.assertEqual(appended_path, sys.path[-1])
+        self.assertIn(appended_path, sys.path)
         self.assertEqual(appended_path, os.getcwd())
 
     def test_append_git_root(self):
         appended_path = syspath.append_git_root()
-        self.assertEqual(len(sys.path), len(self.orig_sys_path)+1)
-        self.assertEqual(appended_path, sys.path[-1])
+        self.assertIn(appended_path, sys.path)
         self.assertEqual(os.path.split(appended_path)[1], 'syspath')
 
     def test_append_git_root_cli(self):
         with patch('syspath.syspath._caller_path') as mock_caller_path:
             mock_caller_path.side_effect = RuntimeError()
             appended_path = syspath.append_git_root()
-        self.assertEqual(appended_path, sys.path[-1])
+        self.assertIn(appended_path, sys.path)
         self.assertEqual(os.path.split(appended_path)[1], 'syspath')
 
     def test_append_git_root_error(self):
@@ -67,14 +70,14 @@ class TestSysPath(unittest.TestCase):
     def test_append_parent_path(self):
         appended_path = syspath.append_parent_path()
         self.assertEqual(len(sys.path), len(self.orig_sys_path)+1)
-        self.assertEqual(appended_path, sys.path[-1])
+        self.assertIn(appended_path, sys.path)
         self.assertEqual(os.path.split(appended_path)[1], 'syspath')
 
     def test_append_cli_parent_path(self):
         with patch('syspath.syspath._caller_path') as mock_caller_path:
             mock_caller_path.side_effect = RuntimeError()
             appended_path = syspath.append_parent_path()
-        self.assertEqual(appended_path, sys.path[-1])
+        self.assertIn(appended_path, sys.path)
         path = os.getcwd()
         parent = os.path.abspath(os.path.join(path, os.pardir))
         self.assertEqual(appended_path, parent)
