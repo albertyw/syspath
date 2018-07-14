@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v1.1.0
+------
+
+ - Add path variable to shortcut modules
+ - Update dependencies
+ - Make syspath not add duplicate paths
+
+
 v1.0.1
 ------
 
