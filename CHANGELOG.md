@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v1.1.1
+------
+
+ - Update dependencies
+ - Formatting
+
+
 v1.1.0
 ------
 
