@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v2.0.0
+------
+
+ - Drop support for python 2
+ - Update dependencies
+
+
 v1.1.1
 ------
 
