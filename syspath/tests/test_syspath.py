@@ -2,11 +2,7 @@ import copy
 import os
 import sys
 import unittest
-
-try:
-    from unittest.mock import patch
-except ImportError:
-    from mock import patch
+from unittest.mock import patch
 
 import syspath
 
