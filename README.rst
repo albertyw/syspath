@@ -52,8 +52,6 @@ to get the path added.
 Development
 -----------
 
-Syspath should work with both python 2 and 3.
-
 .. code:: bash
 
     pip install -r requirements-test.txt
