@@ -30,7 +30,7 @@ def _caller_path(index: int) -> str:
     return path
 
 
-def get_current_path(index: int=2) -> str:
+def get_current_path(index: int = 2) -> str:
     """
     Get the caller's path to sys.path
     If the caller is a CLI through stdin, the current working directory is used
@@ -42,7 +42,7 @@ def get_current_path(index: int=2) -> str:
     return path
 
 
-def append_current_path(index: int=3) -> str:
+def append_current_path(index: int = 3) -> str:
     """
     Append the result of current_path to sys.path
     If the caller is a CLI through stdin, the current working directory is used
@@ -52,7 +52,7 @@ def append_current_path(index: int=3) -> str:
     return path
 
 
-def get_git_root(index: int=3) -> str:
+def get_git_root(index: int = 3) -> str:
     """
     Get the path of the git root directory of the caller's file
     Raises a RuntimeError if a git repository cannot be found
@@ -67,7 +67,7 @@ def get_git_root(index: int=3) -> str:
         path = os.path.split(path)[0]
 
 
-def append_git_root(index: int=4) -> str:
+def append_git_root(index: int = 4) -> str:
     """
     Append the result of get_git_root to sys.path
     Raises a RuntimeError if a git repository cannot be found
@@ -77,7 +77,7 @@ def append_git_root(index: int=4) -> str:
     return path
 
 
-def get_parent_path(index: int=2) -> str:
+def get_parent_path(index: int = 2) -> str:
     """
     Get the caller's parent path to sys.path
     If the caller is a CLI through stdin, the parent of the current working
@@ -91,7 +91,7 @@ def get_parent_path(index: int=2) -> str:
     return path
 
 
-def append_parent_path(index: int=3) -> str:
+def append_parent_path(index: int = 3) -> str:
     """
     Append the result of parent_path to sys.path
     If the caller is a CLI through stdin, the parent of the current working
