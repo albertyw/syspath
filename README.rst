@@ -56,7 +56,7 @@ Development
 
     pip install -r requirements-test.txt
     pip install -r requirements-test-python3.txt
-    mypy syspath/syspath.py
+    mypy syspath --strict
     coverage run setup.py test
     coverage report
     flake8
