@@ -1,4 +1,4 @@
-from syspath import append_current_path
+from .syspath import append_current_path
 
 
 path = append_current_path(index=4)
