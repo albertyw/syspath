@@ -2,22 +2,21 @@ import copy
 import sys
 import unittest
 
-import syspath
+from .. import syspath
 
 
 class TestGitRoot(unittest.TestCase):
-    def setUp(self):
+    def setUp(self) -> None:
         self.orig_sys_path = copy.deepcopy(sys.path)
 
-    def tearDown(self):
+    def tearDown(self) -> None:
         sys.path = self.orig_sys_path
 
-    def test_import(self):
+    def test_import(self) -> None:
         self.assertEqual(len(sys.path), len(self.orig_sys_path))
-        from syspath import git_root  # noqa: F401
-        import syspath
+        from .. import git_root  # noqa: F401
         self.assertIn(syspath.get_git_root(), sys.path)
 
-    def test_path(self):
-        from syspath import git_root
+    def test_path(self) -> None:
+        from .. import git_root
         self.assertEqual(git_root.path, syspath.get_git_root())
