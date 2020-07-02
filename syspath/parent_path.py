@@ -1,4 +1,4 @@
-from syspath import append_parent_path
+from .syspath import append_parent_path
 
 
 path = append_parent_path(index=4)
