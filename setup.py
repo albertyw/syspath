@@ -47,6 +47,7 @@ setup(
 
     keywords='',
 
+    package_data={"varsnap": ["py.typed"]},
     packages=find_packages(exclude=["tests"]),
 
     install_requires=[],
