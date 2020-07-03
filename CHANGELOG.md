@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v2.0.1
+------
+
+ - Export type annotations so they are available to dependent code
+ - Update dependencies
+
+
 v2.0.0
 ------
 
