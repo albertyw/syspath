@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v2.0.2
+------
+
+ - Fix setup.py package data path
+ - Update dependencies
+
+
 v2.0.1
 ------
 
