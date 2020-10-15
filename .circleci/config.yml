@@ -1,0 +1,53 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.1.0
+
+jobs:
+  build-and-test:
+    docker:
+        - image: circleci/python:3.9.0
+          auth:
+            username: $DOCKERHUB_USERNAME
+            password: $DOCKERHUB_PASSWORD
+    environment:
+      CC_TEST_REPORTER_ID: bd2c514a321b9b6f54c6e4820c9d907820b953b3ef394ab47c53b85eb924a8d0
+    resource_class: small
+    executor: python/default
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            pip install -r requirements-test.txt
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            # download test reporter as a static binary
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - run:
+          name: Lint
+          command: flake8
+      - run:
+          name: Type Checking
+          command: mypy syspath --strict
+      - run:
+          name: Test
+          command: |
+            ./cc-test-reporter before-build
+            coverage run -m unittest
+            exitcode="$?"
+            coverage xml
+            ./cc-test-reporter after-build --coverage-input-type coverage.py --exit-code "$exitcode"
+            exit "$exitcode"
+      - run:
+          command: coverage report -m
+          name: Test Coverage
+
+workflows:
+  main:
+    jobs:
+      - build-and-test:
+          context:
+            - dockerhub
