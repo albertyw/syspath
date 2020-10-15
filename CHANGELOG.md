@@ -1,6 +1,15 @@
 Changelog
 =========
 
+v2.0.3
+------
+
+ - Add "Typed" to python package classifier
+ - Fix imports to prevent type errors in dependent code
+ - Switch CI from Codeship to CircleCI
+ - Update dependencies
+
+
 v2.0.2
 ------
 
