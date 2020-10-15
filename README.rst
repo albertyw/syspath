@@ -3,7 +3,8 @@ SysPath
 
 |PyPI| |Python Versions|
 
-|Codeship Status for albertyw/syspath| |Dependency Status| |Code Climate| |Test Coverage|
+|Circle CI| |Dependency Status| |Code Climate| |Test Coverage|
+
 
 SysPath is a package to easily set common paths into ``sys.path``.  Instead of
 having to do a lot of path manipulation to properly import files, a file can
@@ -73,8 +74,8 @@ Publishing
    :target: https://pypi.python.org/pypi/syspath/
 .. |Python Versions| image:: https://img.shields.io/pypi/pyversions/syspath.svg
    :target: https://github.com/albertyw/syspath
-.. |Codeship Status for albertyw/syspath| image:: https://app.codeship.com/projects/8d31dab0-c698-0135-edff-328cb0679be8/status?branch=master
-   :target: https://codeship.com/projects/261214
+.. |Circle CI| image:: https://circleci.com/gh/albertyw/req-update.svg?style=shield
+   :target: https://circleci.com/gh/albertyw/req-update
 .. |Dependency Status| image:: https://pyup.io/repos/github/albertyw/syspath/shield.svg
    :target: https://pyup.io/repos/github/albertyw/syspath/
 .. |Code Climate| image:: https://codeclimate.com/github/albertyw/syspath/badges/gpa.svg
