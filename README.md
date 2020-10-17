@@ -74,23 +74,3 @@ pip install twine
 python setup.py sdist bdist_wheel
 twine upload dist/*
 ```
-
-  [PyPI]: https://img.shields.io/pypi/v/syspath.svg
-  [1]: https://pypi.python.org/pypi/syspath/
-  [Python Versions]: https://img.shields.io/pypi/pyversions/syspath.svg
-  [2]: https://github.com/albertyw/syspath
-  [Circle CI]: https://circleci.com/gh/albertyw/req-update.svg?style=shield
-  [3]: https://circleci.com/gh/albertyw/req-update
-  [Dependency Status]: https://pyup.io/repos/github/albertyw/syspath/shield.svg
-  [4]: https://pyup.io/repos/github/albertyw/syspath/
-  [Code Climate]: https://codeclimate.com/github/albertyw/syspath/badges/gpa.svg
-  [5]: https://codeclimate.com/github/albertyw/syspath
-  [Test Coverage]: https://codeclimate.com/github/albertyw/syspath/badges/coverage.svg
-  [6]: https://codeclimate.com/github/albertyw/syspath/coverage
-
-
-
-|PyPI| |Python Versions|
-
-|Circle CI| |Dependency Status| |Code Climate| |Test Coverage|
-
