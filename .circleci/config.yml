@@ -41,6 +41,7 @@ jobs:
             coverage xml
             ./cc-test-reporter after-build --coverage-input-type coverage.py --exit-code "$exitcode"
             exit "$exitcode"
+      - python/dist
       - run:
           command: coverage report -m
           name: Test Coverage
