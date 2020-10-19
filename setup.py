@@ -22,6 +22,7 @@ setup(
 
     description='Easily add common paths to sys.path',
     long_description=long_description,
+    long_description_content_type='text/markdown',
 
     url='https://github.com/albertyw/syspath',
 
