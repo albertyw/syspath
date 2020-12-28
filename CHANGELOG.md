@@ -1,6 +1,15 @@
 Changelog
 =========
 
+v2.0.4
+------
+
+ - Add support for python 3.9
+ - Switch CI back from CircleCI to Codeship
+ - Switch README to markdown
+ - Update dependencies
+
+
 v2.0.3
 ------
 
