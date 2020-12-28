@@ -5,7 +5,7 @@ SysPath
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/syspath)
 ![PyPI - License](https://img.shields.io/pypi/l/syspath)
 
-[![Circle CI](https://circleci.com/gh/albertyw/req-update.svg?style=shield)](https://circleci.com/gh/albertyw/req-update)
+[![Codeship Status for albertyw/syspath](https://app.codeship.com/projects/0b820752-e3f2-41ca-aa63-b7df4c8fe89d/status?branch=master)](https://app.codeship.com/projects/422681)
 [![Dependency Status](https://pyup.io/repos/github/albertyw/syspath/shield.svg)](https://pyup.io/repos/github/albertyw/syspath/)
 [![Code Climate](https://codeclimate.com/github/albertyw/syspath/badges/gpa.svg)](https://codeclimate.com/github/albertyw/syspath)
 [![Code Climate Test Coverage](https://codeclimate.com/github/albertyw/syspath/badges/coverage.svg)](https://codeclimate.com/github/albertyw/syspath/coverage)
