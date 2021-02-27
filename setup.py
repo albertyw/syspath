@@ -4,6 +4,7 @@
 from setuptools import setup, find_packages
 from codecs import open
 from os import path
+from typing import Any, Dict
 
 
 # Get the long description from the README file
@@ -11,7 +12,7 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-about = {}
+about: Dict[str, Any] = {}
 with open(path.join(here, 'syspath', '__version__.py')) as f:
     exec(f.read(), about)
 
