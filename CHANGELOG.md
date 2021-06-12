@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v2.0.5
+------
+
+ - Test updates
+ - Switch from Codeship to Drone CI
+ - Update dependencies
+
+
 v2.0.4
 ------
 
