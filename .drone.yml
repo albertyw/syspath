@@ -20,7 +20,7 @@ steps:
       - chmod +x "${HOME}/bin/cc-test-reporter"
       - pip install -r requirements-test.txt
       - flake8
-      - mypy . --strict --ignore-missing-imports
+      - mypy syspath --strict
       - cc-test-reporter before-build
       - coverage run setup.py test
       - exitcode="$?"
