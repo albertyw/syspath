@@ -59,9 +59,11 @@ Development
 -----------
 
 ```bash
+python setup.py develop
 pip install -r requirements-test.txt
+flake8
 mypy syspath --strict
-coverage run setup.py test
+coverage run -m unittest
 coverage report
 flake8
 ```
