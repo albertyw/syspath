@@ -1,4 +1,5 @@
 import copy
+from pathlib import Path
 import sys
 import unittest
 
@@ -15,8 +16,8 @@ class TestGitRoot(unittest.TestCase):
     def test_import(self) -> None:
         self.assertEqual(len(sys.path), len(self.orig_sys_path))
         from .. import git_root  # noqa: F401
-        self.assertIn(syspath.get_git_root(), sys.path)
+        self.assertIn(str(syspath.get_git_root()), sys.path)
 
     def test_path(self) -> None:
         from .. import git_root
-        self.assertEqual(git_root.path, syspath.get_git_root())
+        self.assertEqual(Path(git_root.path), syspath.get_git_root())
