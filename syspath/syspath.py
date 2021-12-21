@@ -58,14 +58,14 @@ def get_git_root(index: int = 3) -> str:
     Get the path of the git root directory of the caller's file
     Raises a RuntimeError if a git repository cannot be found
     """
-    path = get_current_path(index=index)
+    path = Path(get_current_path(index=index))
     while True:
-        git_path = os.path.join(path, '.git')
-        if os.path.isdir(git_path):
-            return path
-        if os.path.dirname(path) == path:
+        git_path = path / '.git'
+        if git_path.is_dir():
+            return str(path)
+        if path.parent == path:
             raise RuntimeError("Cannot find git root")
-        path = os.path.split(path)[0]
+        path = path.parent
 
 
 def append_git_root(index: int = 4) -> str:
