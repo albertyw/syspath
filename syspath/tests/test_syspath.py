@@ -1,5 +1,6 @@
 import copy
 import os
+from pathlib import Path
 import sys
 import unittest
 from unittest.mock import patch
@@ -15,17 +16,17 @@ class TestSysPath(unittest.TestCase):
         sys.path = self.orig_sys_path
 
     def test_append_path(self) -> None:
-        syspath._append_path('asdf')
+        syspath._append_path(Path('asdf'))
         self.assertEqual(sys.path[-1], 'asdf')
 
     def test_append_path_deduplicates(self) -> None:
-        syspath._append_path(sys.path[0])
+        syspath._append_path(Path(sys.path[0]))
         self.assertEqual(len(sys.path), len(self.orig_sys_path))
 
     def test_caller_path(self) -> None:
         path = syspath._caller_path(1)
         expected = os.path.dirname(os.path.realpath(__file__))
-        self.assertEqual(path, expected)
+        self.assertEqual(path, Path(expected))
 
     def test_caller_path_error(self) -> None:
         with self.assertRaises(RuntimeError):
