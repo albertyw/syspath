@@ -1,15 +1,16 @@
 import inspect
 import os
+from pathlib import Path
 import sys
 
 
-def _append_path(new_path: str) -> None:
-    """ Given a path string, append it to sys.path """
-    for path in sys.path:
-        path = os.path.abspath(path)
+def _append_path(new_path: Path) -> None:
+    """ Given a Path, append it to sys.path """
+    for path_str in sys.path:
+        path = Path(path_str).resolve()
         if new_path == path:
             return
-    sys.path.append(new_path)
+    sys.path.append(str(new_path))
 
 
 def _caller_path(index: int) -> str:
@@ -48,7 +49,7 @@ def append_current_path(index: int = 3) -> str:
     If the caller is a CLI through stdin, the current working directory is used
     """
     path = get_current_path(index=index)
-    _append_path(path)
+    _append_path(Path(path))
     return path
 
 
@@ -73,7 +74,7 @@ def append_git_root(index: int = 4) -> str:
     Raises a RuntimeError if a git repository cannot be found
     """
     path = get_git_root(index=index)
-    _append_path(path)
+    _append_path(Path(path))
     return path
 
 
@@ -98,5 +99,5 @@ def append_parent_path(index: int = 3) -> str:
     directory is used
     """
     path = get_parent_path(index=index)
-    _append_path(path)
+    _append_path(Path(path))
     return path
