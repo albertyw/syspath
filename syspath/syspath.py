@@ -13,7 +13,7 @@ def _append_path(new_path: Path) -> None:
     sys.path.append(str(new_path))
 
 
-def _caller_path(index: int) -> str:
+def _caller_path(index: int) -> Path:
     """
     Get the caller's file path, by the index of the stack,
     does not work when the caller is stdin through a CLI python
@@ -27,7 +27,7 @@ def _caller_path(index: int) -> str:
         module = inspect.getmodule(frame[0])
         index += 1
     filename = module.__file__
-    path = os.path.dirname(os.path.realpath(filename))
+    path = Path(os.path.realpath(filename)).parent
     return path
 
 
@@ -39,8 +39,8 @@ def get_current_path(index: int = 2) -> str:
     try:
         path = _caller_path(index)
     except RuntimeError:
-        path = os.getcwd()
-    return path
+        path = Path.cwd()
+    return str(path)
 
 
 def append_current_path(index: int = 3) -> str:
@@ -87,9 +87,9 @@ def get_parent_path(index: int = 2) -> str:
     try:
         path = _caller_path(index)
     except RuntimeError:
-        path = os.getcwd()
-    path = os.path.abspath(os.path.join(path, os.pardir))
-    return path
+        path = Path.cwd()
+    path = path.parent.resolve()
+    return str(path)
 
 
 def append_parent_path(index: int = 3) -> str:

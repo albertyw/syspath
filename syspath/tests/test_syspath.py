@@ -26,7 +26,7 @@ class TestSysPath(unittest.TestCase):
     def test_caller_path(self) -> None:
         path = syspath._caller_path(1)
         expected = os.path.dirname(os.path.realpath(__file__))
-        self.assertEqual(path, expected)
+        self.assertEqual(path, Path(expected))
 
     def test_caller_path_error(self) -> None:
         with self.assertRaises(RuntimeError):
