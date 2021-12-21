@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v2.0.6 (2021-12-20)
+-------------------
+
+ - Officially support python 3.10
+ - CI optimizations
+ - Update dependencies
+
+
 v2.0.5
 ------
 
