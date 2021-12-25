@@ -62,17 +62,15 @@ Development
 python setup.py develop
 pip install -r requirements-test.txt
 flake8
-mypy syspath --strict
+mypy . --strict
 coverage run -m unittest
-coverage report
+coverage report -m
 flake8
 ```
 
 Publishing
 ----------
 
-```bash
-pip install twine
-python setup.py sdist bdist_wheel
-twine upload dist/*
-```
+1.  Update `CHANGELOG.md`
+2.  Update `syspath/__version__.py`
+3.  Commit, tag with the version number, and push
