@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v3.0.0 (2021-12-24)
+-------------------
+
+ - Change all returned paths as python stdlib `pathlib.Path`s instead of strings
+ - Update dependencies
+
+
 v2.0.6 (2021-12-20)
 -------------------
 
