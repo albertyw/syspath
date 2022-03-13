@@ -4,4 +4,4 @@ flake8==4.0.1                    # Python linting
 
 # Type checking
 mypy==0.940                      # Static typing
-types-setuptools==57.4.9         # Type stubs for setuptools module
+types-setuptools==57.4.10        # Type stubs for setuptools module
