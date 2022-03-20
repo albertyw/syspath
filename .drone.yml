@@ -16,7 +16,7 @@ steps:
       - python setup.py develop
       - pip install -r requirements-test.txt
       - flake8
-      - mypy . --strict
+      - mypy . --strict --exclude build
       - cc-test-reporter before-build
       - coverage run -m unittest
       - exitcode="$?"
@@ -26,7 +26,17 @@ steps:
     environment:
       CC_TEST_REPORTER_ID: bd2c514a321b9b6f54c6e4820c9d907820b953b3ef394ab47c53b85eb924a8d0
 
+  - name: Test Python Packaging
+    image: python:3.10
+    commands:
+      - pip install twine
+      - python setup.py sdist bdist_wheel
+      - twine check --strict dist/*
+
   - name: Upload Python
+    depends_on:
+      - Test Python
+      - Test Python Packaging
     image: python:3.10
     commands:
       - pip install twine
