@@ -1,5 +1,4 @@
 import inspect
-import os
 from pathlib import Path
 import sys
 
@@ -27,7 +26,7 @@ def _caller_path(index: int) -> Path:
         module = inspect.getmodule(frame[0])
         index += 1
     filename = module.__file__
-    path = Path(os.path.realpath(filename)).parent
+    path = Path(filename).resolve().parent
     return path
 
 
