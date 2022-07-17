@@ -26,6 +26,16 @@ steps:
     environment:
       CC_TEST_REPORTER_ID: bd2c514a321b9b6f54c6e4820c9d907820b953b3ef394ab47c53b85eb924a8d0
 
+  - name: Test Python 3.11
+    image: python:3.11-rc
+    commands:
+      - python setup.py develop
+      - pip install -r requirements-test.txt
+      - flake8
+      - mypy . --strict --exclude build
+      - coverage run -m unittest
+      - coverage report -m
+
   - name: Test Python Packaging
     image: python:3.10
     commands:
@@ -36,6 +46,7 @@ steps:
   - name: Upload Python
     depends_on:
       - Test Python
+      - Test Python 3.11
       - Test Python Packaging
     image: python:3.10
     commands:
