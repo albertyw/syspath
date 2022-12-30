@@ -3,5 +3,5 @@ coverage==7.0.1                  # Test coverage
 flake8==6.0.0                    # Python linting
 
 # Type checking
-mypy==0.982                      # Static typing
+mypy==0.991                      # Static typing
 types-setuptools==65.4.0.0       # Type stubs for setuptools module
