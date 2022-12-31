@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v3.0.2 (2022-12-30)
+-------------------
+
+ - Officially support python 3.11; remove support for Python 3.6
+ - Update dependencies
+ - CI and packaging optimizations
+
+
 v3.0.1 (2022-04-01)
 -------------------
 
