@@ -61,11 +61,11 @@ Development
 ```bash
 python setup.py develop
 pip install -r requirements-test.txt
-flake8
+ruff check .
 mypy . --strict
 coverage run -m unittest
 coverage report -m
-flake8
+ruff check .
 ```
 
 Publishing

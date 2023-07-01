@@ -60,8 +60,6 @@ setup(
 
     test_suite="syspath.tests",
 
-    # testing requires flake8 and coverage but they're listed separately
-    # because they need to wrap setup.py
     extras_require={
         'dev': [],
         'test': [],
