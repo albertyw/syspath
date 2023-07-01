@@ -4,4 +4,4 @@ ruff==0.0.275                    # Python linting
 
 # Type checking
 mypy==1.4.1                      # Static typing
-types-setuptools==65.6.0.2       # Type stubs for setuptools module
+types-setuptools==68.0.0.0       # Type stubs for setuptools module
