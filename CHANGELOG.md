@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v3.0.3 (2023-09-17)
+-------------------
+
+ - Update dependencies
+ - CI and packaging optimizations
+
+
 v3.0.2 (2022-12-30)
 -------------------
 
