@@ -4,7 +4,7 @@ name: test
 
 steps:
   - name: Test Python
-    image: python:3.11-slim
+    image: python:3.12-slim
     commands:
       - apt-get update && apt-get install -y curl git
       - curl -L "https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-$(dpkg --print-architecture)" > "${HOME}/bin/cc-test-reporter"
@@ -23,7 +23,7 @@ steps:
       CC_TEST_REPORTER_ID: bd2c514a321b9b6f54c6e4820c9d907820b953b3ef394ab47c53b85eb924a8d0
 
   - name: Test Python Packaging
-    image: python:3.11-slim
+    image: python:3.12-slim
     commands:
       - pip install twine
       - python setup.py sdist bdist_wheel
@@ -38,7 +38,7 @@ steps:
         from_secret: twine_username
       TWINE_PASSWORD:
         from_secret: twine_password
-    image: python:3.11-slim
+    image: python:3.12-slim
     commands:
       - pip install twine
       - python setup.py sdist bdist_wheel
