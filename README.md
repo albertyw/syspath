@@ -59,7 +59,6 @@ Development
 -----------
 
 ```bash
-python setup.py develop
 pip install -r requirements-test.txt
 ruff check .
 mypy . --strict
