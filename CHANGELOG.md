@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v3.0.4 (2023-11-19)
+-------------------
+
+ - Officially support python 3.12
+ - Update dependencies
+ - Switch from setup.py to pyproject
+
+
 v3.0.3 (2023-09-17)
 -------------------
 
