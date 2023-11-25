@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v3.0.5 (2023-11-24)
+-------------------
+
+ - Fix including py.typed for type annotations
+ - Update dependencies
+
+
 v3.0.4 (2023-11-19)
 -------------------
 
