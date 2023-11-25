@@ -32,7 +32,7 @@ dynamic = ["version", "readme"]
 version = {attr = "syspath.__version__.__version__"}
 readme = {file = "README.md", content-type="text/markdown"}
 
-[options.package_data]
+[tool.setuptools.package-data]
 syspath = ["py.typed"]
 
 [tool.ruff]
