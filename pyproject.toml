@@ -28,11 +28,11 @@ dynamic = ["version", "readme"]
 [project.optional-dependencies]
 test = [
     # Testing
-    "coverage==7.4.0",                  # Test coverage
-    "ruff==0.1.14",                     # Python linting
+    "coverage==7.4.4",                  # Test coverage
+    "ruff==0.3.3",                      # Python linting
 
     # Type checking
-    "mypy==1.8.0",                      # Static typing
+    "mypy==1.9.0",                      # Static typing
 ]
 
 [project.urls]
@@ -46,7 +46,7 @@ readme = {file = "README.md", content-type="text/markdown"}
 syspath = ["py.typed"]
 
 [tool.ruff]
-select = ["E", "F", "B"]
+lint.select = ["E", "F", "B"]
 
 [tool.mypy]
 strict = true
