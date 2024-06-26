@@ -61,7 +61,7 @@ Development
 ```bash
 pip install -e .[test]
 ruff check .
-mypy . --strict
+mypy .
 coverage run -m unittest
 coverage report -m
 ruff check .
