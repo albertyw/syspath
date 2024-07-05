@@ -6,7 +6,6 @@ SysPath
 ![PyPI - License](https://img.shields.io/pypi/l/syspath)
 
 [![Build Status](https://drone.albertyw.com/api/badges/albertyw/syspath/status.svg)](https://drone.albertyw.com/albertyw/syspath)
-[![Dependency Status](https://pyup.io/repos/github/albertyw/syspath/shield.svg)](https://pyup.io/repos/github/albertyw/syspath/)
 [![Code Climate](https://codeclimate.com/github/albertyw/syspath/badges/gpa.svg)](https://codeclimate.com/github/albertyw/syspath)
 [![Code Climate Test Coverage](https://codeclimate.com/github/albertyw/syspath/badges/coverage.svg)](https://codeclimate.com/github/albertyw/syspath/coverage)
 
