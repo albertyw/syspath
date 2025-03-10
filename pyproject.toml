@@ -32,7 +32,7 @@ test = [
     "ruff==0.8.2",            # Python linting
 
     # Type checking
-    "mypy==1.13.0",           # Static typing
+    "mypy==1.15.0",           # Static typing
 ]
 
 [project.urls]
