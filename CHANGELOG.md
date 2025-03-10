@@ -1,6 +1,15 @@
 Changelog
 =========
 
+v3.0.7 (2025-03-09)
+-------------------
+
+ - Update dependencies
+ - Officially support python 3.13
+ - Check for edge cases where module is not a file
+ - Update lint rules
+
+
 v3.0.6 (2024-03-17)
 -------------------
 
