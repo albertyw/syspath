@@ -26,6 +26,8 @@ def _caller_path(index: int) -> Path:
         module = inspect.getmodule(frame[0])
         index += 1
     filename = module.__file__
+    if not filename:
+        raise RuntimeError("Cannot find import path")
     path = Path(filename).resolve().parent
     return path
 
