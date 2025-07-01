@@ -14,9 +14,9 @@ class TestCurrentPath(unittest.TestCase):
 
     def test_import(self) -> None:
         self.assertEqual(len(sys.path), len(self.orig_sys_path))
-        from .. import current_path  # noqa: F401
+        from .. import current_path  # noqa: F401,PLC0415
         self.assertIn(str(syspath.get_current_path()), sys.path)
 
     def test_path(self) -> None:
-        from .. import current_path
+        from .. import current_path  # noqa: PLC0415
         self.assertEqual(current_path.path, syspath.get_current_path())

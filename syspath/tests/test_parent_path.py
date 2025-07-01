@@ -14,9 +14,9 @@ class TestParentPath(unittest.TestCase):
 
     def test_import(self) -> None:
         self.assertEqual(len(sys.path), len(self.orig_sys_path))
-        from .. import parent_path  # noqa: F401
+        from .. import parent_path  # noqa: F401,PLC0415
         self.assertIn(str(syspath.get_parent_path()), sys.path)
 
     def test_path(self) -> None:
-        from .. import parent_path
+        from .. import parent_path  # noqa: PLC0415
         self.assertEqual(parent_path.path, syspath.get_parent_path())

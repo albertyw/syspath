@@ -15,9 +15,9 @@ class TestGitRoot(unittest.TestCase):
 
     def test_import(self) -> None:
         self.assertEqual(len(sys.path), len(self.orig_sys_path))
-        from .. import git_root  # noqa: F401
+        from .. import git_root  # noqa: F401,PLC0415
         self.assertIn(str(syspath.get_git_root()), sys.path)
 
     def test_path(self) -> None:
-        from .. import git_root
+        from .. import git_root  # noqa: PLC0415
         self.assertEqual(Path(git_root.path), syspath.get_git_root())
