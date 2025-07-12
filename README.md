@@ -6,8 +6,8 @@ SysPath
 ![PyPI - License](https://img.shields.io/pypi/l/syspath)
 
 [![Build Status](https://drone.albertyw.com/api/badges/albertyw/syspath/status.svg)](https://drone.albertyw.com/albertyw/syspath)
-[![Code Climate](https://codeclimate.com/github/albertyw/syspath/badges/gpa.svg)](https://codeclimate.com/github/albertyw/syspath)
-[![Code Climate Test Coverage](https://codeclimate.com/github/albertyw/syspath/badges/coverage.svg)](https://codeclimate.com/github/albertyw/syspath/coverage)
+[![Maintainability](https://qlty.sh/gh/albertyw/projects/syspath/maintainability.svg)](https://qlty.sh/gh/albertyw/projects/syspath)
+[![Code Coverage](https://qlty.sh/gh/albertyw/projects/syspath/coverage.svg)](https://qlty.sh/gh/albertyw/projects/syspath)
 
 
 SysPath is a package to easily set common paths into `sys.path`. Instead

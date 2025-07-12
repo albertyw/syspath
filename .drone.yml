@@ -6,9 +6,10 @@ steps:
   - name: Test Python
     image: python:3.13-slim
     commands:
-      - apt-get update && apt-get install -y curl git
+      - apt-get update && apt-get install -y curl git xz-utils
       - curl -L "https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-$(dpkg --print-architecture)" > "${HOME}/bin/cc-test-reporter"
       - chmod +x "${HOME}/bin/cc-test-reporter"
+      - curl https://qlty.sh | sh
       - pip install -e .[test]
       - ruff check .
       - mypy .
@@ -18,8 +19,11 @@ steps:
       - coverage report -m
       - coverage xml
       - cc-test-reporter after-build --exit-code "$exitcode"
+      - coverage lcov -o .coverage.lcov
+      - ~/.qlty/bin/qlty coverage publish .coverage.lcov --override-commit-sha "$DRONE_COMMIT_SHA" --override-branch "$DRONE_BRANCH" --override-build-id "$DRONE_BUILD_NUMBER"
     environment:
       CC_TEST_REPORTER_ID: bd2c514a321b9b6f54c6e4820c9d907820b953b3ef394ab47c53b85eb924a8d0
+      QLTY_COVERAGE_TOKEN: qltcp_FW4VIJ3EA7l99c0m
 
   - name: Test Python Packaging
     image: python:3.13-slim
