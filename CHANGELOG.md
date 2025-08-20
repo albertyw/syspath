@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v3.0.8 (2025-08-20)
+-------------------
+
+ - Update dependencies
+ - Update license declaration to conform with new python packaging standards
+ - Switch from CodeClimate to Qlty
+
+
 v3.0.7 (2025-03-09)
 -------------------
 
