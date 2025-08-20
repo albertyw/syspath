@@ -38,6 +38,9 @@ test = [
 [project.urls]
 "Homepage" = "https://github.com/albertyw/syspath"
 
+[tool.setuptools]
+packages = ["syspath"]
+
 [tool.setuptools.dynamic]
 version = {attr = "syspath.__version__.__version__"}
 readme = {file = "README.md", content-type="text/markdown"}
