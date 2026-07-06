@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v3.0.9 (2026-07-06)
+-------------------
+
+- Officially support python 3.14
+- Publish packages using OIDC signing
+- Update dependencies
+
+
 v3.0.8 (2025-08-20)
 -------------------
 
